@@ -13,15 +13,12 @@ pygame.display.set_caption("EJTW")
 window.fill((255,255,255))
 pygame.display.update()
 
-defaultFont = pygame.font.get_default_font()
-
 def getMilliseconds() -> int:
 	return int(round(time.time() * 1000))
 
 def displayText(text: str, x: int, y: int, color = (0, 0, 0), center: bool = True, size: int = 64):
-	font = pygame.font.Font(defaultFont, size)
-	font.set_bold(True)
-	txt = font.render(text, False, color)
+	font = pygame.font.Font("FantasqueSansMono-Regular.ttf", 16)
+	txt = font.render(text, True, color)
 	if center == True:
 		x -= (txt.get_width() // 2)
 		y -= (txt.get_height() // 2)
@@ -67,10 +64,11 @@ while run:
 			displayText("EasyJumpToWin", (windowWidth / 2), 32, clBlack, True, 32)
 			
 			displayButton(x = (windowWidth / 4), y = (windowHeight / 4) * 3, width = 125, height = 35, buttonColor = clBlue)
-			displayText("Play", (windowWidth / 4), (windowHeight / 4) * 3 + 16, color = clWhite, size = 32)
+			displayText("Play", (windowWidth / 4), (windowHeight / 4) * 3 + 18, color = clWhite, size = 30)
 			
 			displayButton(x = ((windowWidth / 4) * 3), y = ((windowHeight / 4) * 3), width = 225, height = 35, buttonColor = clBlue)
-			displayText("Another button", (windowWidth / 4) * 3, (windowHeight / 4) * 3 + 14, color = clWhite, size = 24)
+			displayText("Another button", (windowWidth / 4) * 3, (windowHeight / 4) * 3 + 18, color = clWhite, size = 24)
+			
 		elif menuState == "play":
 			window.fill((255,255,255))
 			
