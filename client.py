@@ -28,8 +28,6 @@ class Network():
 		except Exception as err:
 			print("err: ", str(err))
 
-n = Network()
-
 class Player():
 	def __init__(self, x, y, size, speed, color):
 		self.x = int(x)
